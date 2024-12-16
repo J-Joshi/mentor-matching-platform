@@ -22,6 +22,7 @@ const Login = () => {
       );
 
       if (!response.ok) {
+        console.log(response);
         throw new Error("Invalid email or password.");
       }
 
