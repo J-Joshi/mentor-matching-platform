@@ -10,16 +10,23 @@ console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
 const app = express();
 
 const allowedOrigins = [
-  "https://mentor-matching-platform-pi9d.vercel.app", // Your frontend domain
+  "https://mentor-matching-platform-pi9d.vercel.app", // Frontend URL
   "http://localhost:3000", // Add localhost for development
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins, // Allow specific origins
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // Allow cookies and auth headers
+    origin: (origin, callback) => {
+      // Allow requests from allowed origins
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
+    credentials: true, // Allow cookies and authentication headers
   })
 );
 
