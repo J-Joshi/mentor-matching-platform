@@ -12,7 +12,7 @@ dotenv.config();
 // Middleware
 app.use(
   cors({
-    origin: "*", // Allow requests from any origin
+    origin: "https://mentor-matching-platform-lexo.vercel.app", // Allow requests from any origin
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
