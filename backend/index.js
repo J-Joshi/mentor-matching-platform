@@ -9,8 +9,22 @@ console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
 
 const app = express();
 
-// Middleware
-app.use(cors());
+const allowedOrigins = [
+  "https://mentor-matching-platform-pi9d.vercel.app", // Your frontend domain
+  "http://localhost:3000", // Add localhost for development
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins, // Allow specific origins
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Allow cookies and auth headers
+  })
+);
+
+// Explicitly handle preflight requests
+app.options("*", cors());
 
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded request bodies
