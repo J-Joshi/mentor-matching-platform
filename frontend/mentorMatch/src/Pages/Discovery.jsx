@@ -22,7 +22,7 @@ const Discovery = () => {
       }).toString();
 
       const response = await fetch(
-        `http://localhost:5001/api/discovery?${queryParams}`,
+        `${import.meta.env.VITE_BACKEND_API_URL}/api/discovery?${queryParams}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -51,7 +51,9 @@ const Discovery = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:5001/api/mentorship-requests/sendrequest",
+        `${
+          import.meta.env.VITE_BACKEND_API_URL
+        }/api/mentorship-requests/sendrequest`,
         {
           method: "POST",
           headers: {

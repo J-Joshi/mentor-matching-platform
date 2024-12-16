@@ -14,7 +14,9 @@ const ConnectionRequests = () => {
 
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:5001/api/mentorship-requests/getrequest",
+        `${
+          import.meta.env.VITE_BACKEND_API_URL
+        }/api/mentorship-requests/getrequest`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -44,7 +46,7 @@ const ConnectionRequests = () => {
     try {
       const token = localStorage.getItem("token");
       await fetch(
-        `http://localhost:5001/api/mentorship-requests/updaterequest/${requestId}`,
+        `${process.env.VITE_BACKEND_API_URL}/api/mentorship-requests/updaterequest/${requestId}`,
         {
           method: "PUT",
           headers: {
@@ -67,7 +69,9 @@ const ConnectionRequests = () => {
     try {
       const token = localStorage.getItem("token");
       await fetch(
-        `http://localhost:5001/api/mentorship-requests/updaterequest/${requestId}`,
+        `${
+          import.meta.env.VITE_BACKEND_API_URL
+        }/api/mentorship-requests/updaterequest/${requestId}`,
         {
           method: "PUT",
           headers: {

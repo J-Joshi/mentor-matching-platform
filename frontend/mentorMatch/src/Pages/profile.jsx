@@ -11,7 +11,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem("token"); // Fetch token from localStorage
         const response = await fetch(
-          "http://localhost:5001/api/profile/getprofile",
+          `${import.meta.env.VITE_BACKEND_API_URL}/api/profile/getprofile`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

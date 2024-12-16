@@ -17,7 +17,7 @@ const ProfileUpdate = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:5001/api/profile/getprofile",
+          `${import.meta.env.VITE_BACKEND_API_URL}/api/profile/getprofile`,
           {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
@@ -51,7 +51,7 @@ const ProfileUpdate = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:5001/api/profile/updateProfile",
+        `${import.meta.env.VITE_BACKEND_API_URL}/api/profile/updateProfile`,
         {
           method: "PUT",
           headers: {

@@ -10,7 +10,9 @@ const RedirectToProfile = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:5001/api/profile/checkprofilestatus",
+          `${
+            import.meta.env.VITE_BACKEND_API_URL
+          }/api/profile/checkprofilestatus`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
