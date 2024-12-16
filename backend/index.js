@@ -10,7 +10,13 @@ console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
 const app = express();
 dotenv.config();
 // Middleware
-app.use(cors({ origin: `${process.env.FRONTEND_URL}` }));
+app.use(
+  cors({
+    origin: `${process.env.FRONTEND_URL}`,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 
