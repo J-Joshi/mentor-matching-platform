@@ -39,7 +39,7 @@ export const getProfile = async (req, res) => {
 
 // Update User Profile
 export const updateProfile = async (req, res) => {
-  const { skills, interests, bio } = req.body;
+  const { role, skills, interests, bio } = req.body;
 
   try {
     const user = await User.findByPk(req.user.id);
