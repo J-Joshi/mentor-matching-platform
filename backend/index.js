@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import path from "path";
 import db from "./models/index.js"; // Import the database and models
 
 console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
@@ -39,6 +40,15 @@ app.use("/api/matchmaking", matchmakingRoutes); // Matchmaking routes
 app.use("/api/discovery", discoveryRoutes);
 app.use("/api/mentorship-requests", mentorshipRequestRoutes); // Mentorship request routes
 app.use("/api/notifications", notificationRoutes); // Notifications
+
+// Serve React build folder
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "build")));
+
+// Catch-all for React Router
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 // Sync database and start server
 db.sequelize
