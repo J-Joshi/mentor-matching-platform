@@ -43,11 +43,11 @@ app.use("/api/notifications", notificationRoutes); // Notifications
 
 // Serve React build folder
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 // Catch-all for React Router
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 // Sync database and start server
