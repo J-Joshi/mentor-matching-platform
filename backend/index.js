@@ -10,7 +10,8 @@ console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
 const app = express();
 
 const allowedOrigins = [
-  "https://mentor-matching-platform-pi9d.vercel.app", // Frontend URL
+  "https://mentor-matching-platform-pi9d.vercel.app",
+  "http://mentor-matching-platform-pi9d.vercel.app",
   "http://localhost:5173", // Add localhost for development
 ];
 
