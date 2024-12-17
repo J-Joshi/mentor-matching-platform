@@ -35,9 +35,9 @@ The **Mentorship Matching Platform** enables users to:
 
 ### **Hosting**
 
-- **Frontend**: Hosted on Vercel/Netlify
-- **Backend**: Hosted on Heroku/Railway
-- **Database**: Hosted on MySQL (e.g., PlanetScale or AWS RDS)
+- **Frontend**: Hosted on Render
+- **Backend**: Hosted on Render
+- **Database**: Hosted on Clever Cloud MySQL
 
 ---
 
@@ -82,16 +82,16 @@ The **Mentorship Matching Platform** enables users to:
 
 ## ⚙️ **Setup and Installation**
 
-### Prerequisites:
+## **Installation Guide**
 
-- Node.js installed
-- MySQL installed
+Follow the steps below to set up and run the project locally.
 
 ---
 
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/<your-username>/mentor-matching-platform.git
+git clone https://github.com/J-Joshi/mentor-matching-platform.git
 cd mentor-matching-platform
+
 ```
