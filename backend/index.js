@@ -10,24 +10,15 @@ console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
 const app = express();
 
 const allowedOrigins = [
-  "https://mentor-matching-platform-pi9d.vercel.app",
-  "https://mentor-matching-platform.vercel.app", // Add this missing origin
-  "http://localhost:5173", // For local development
+  // "https://mentor-matching-platform-pi9d.vercel.app",
+  // "https://mentor-matching-platform.vercel.app",
+  "http://localhost:5173",
 ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or curl requests)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+    origin: allowedOrigins, // Directly pass the array of allowed origins
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
 
