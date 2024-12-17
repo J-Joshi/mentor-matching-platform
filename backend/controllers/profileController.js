@@ -45,7 +45,7 @@ export const updateProfile = async (req, res) => {
     const user = await User.findByPk(req.user.id);
     if (!user) return res.status(404).json({ error: "User not found." });
 
-    await user.update({ skills, interests, bio });
+    await user.update({ role, skills, interests, bio });
     res.json({ message: "Profile updated successfully." });
   } catch (err) {
     console.error(err);
