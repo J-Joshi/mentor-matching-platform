@@ -12,7 +12,7 @@ const app = express();
 const allowedOrigins = [
   // "https://mentor-matching-platform-pi9d.vercel.app",
   // "https://mentor-matching-platform.vercel.app",
-  `${process.env.FRONTEND_URL}`,
+  process.env.FRONTEND_URL,
   "http://localhost:5173",
 ];
 
@@ -25,6 +25,8 @@ app.use(
 
 // Explicitly handle preflight requests
 app.options("*", cors());
+
+console.log("Allowed frontend origin:", process.env.FRONTEND_URL);
 
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded request bodies
