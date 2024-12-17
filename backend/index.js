@@ -57,8 +57,8 @@ db.sequelize
   .sync({ alter: true }) // Alter tables to match models without dropping data
   .then(() => {
     console.log("Database synced successfully.");
-    app.listen(5001, () => {
-      console.log("Server is running on port 5001");
+    app.listen(process.env.PORT, () => {
+      console.log(`Server is running on port ${process.env.PORT} `);
     });
   })
   .catch((err) => {
