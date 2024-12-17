@@ -46,7 +46,9 @@ const ConnectionRequests = () => {
     try {
       const token = localStorage.getItem("token");
       await fetch(
-        `${process.env.VITE_BACKEND_API_URL}/api/mentorship-requests/updaterequest/${requestId}`,
+        `${
+          import.meta.env.VITE_BACKEND_API_URL
+        }/api/mentorship-requests/updaterequest/${requestId}`,
         {
           method: "PUT",
           headers: {
@@ -60,6 +62,7 @@ const ConnectionRequests = () => {
       fetchRequests(); // Refresh requests after action
       alert("Request accepted!");
     } catch (err) {
+      console.log(err);
       alert("Failed to accept request.");
     }
   };

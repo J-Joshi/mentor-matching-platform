@@ -11,7 +11,7 @@ const app = express();
 
 const allowedOrigins = [
   "https://mentor-matching-platform-pi9d.vercel.app", // Frontend URL
-  "http://localhost:3000", // Add localhost for development
+  "http://localhost:5173", // Add localhost for development
 ];
 
 app.use(

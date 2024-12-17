@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "Jatin@2003",
-    "database": "mentormatchingdb",
-    "host": "127.0.0.1",
+    "username": "uk1n1rfhdp0dhr3u",
+    "password": "kwakvY21PTEYzrVogJuL",
+    "database": "by1iu9v73w7zecvckm6c",
+    "host": "by1iu9v73w7zecvckm6c-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "Jatin@2003",
-    "database": "mentormatchingdb",
-    "host": "127.0.0.1",
+    "username": "uk1n1rfhdp0dhr3u",
+    "password": "kwakvY21PTEYzrVogJuL",
+    "database": "by1iu9v73w7zecvckm6c",
+    "host": "by1iu9v73w7zecvckm6c-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "Jatin@2003",
-    "database": "mentormatchingdb",
-    "host": "127.0.0.1",
+    "username": "uk1n1rfhdp0dhr3u",
+    "password": "kwakvY21PTEYzrVogJuL",
+    "database": "by1iu9v73w7zecvckm6c",
+    "host": "by1iu9v73w7zecvckm6c-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   }
 }
