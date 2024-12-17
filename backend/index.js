@@ -9,17 +9,10 @@ console.log("JWT_SECRET from env:", process.env.JWT_SECRET);
 
 const app = express();
 
-const allowedOrigins = [
-  // "https://mentor-matching-platform-pi9d.vercel.app",
-  // "https://mentor-matching-platform.vercel.app",
-  process.env.FRONTEND_URL,
-  "http://localhost:5173",
-];
-
 app.use(
   cors({
-    origin: allowedOrigins, // Directly pass the array of allowed origins
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true,
   })
 );
 
