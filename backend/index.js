@@ -12,6 +12,7 @@ const app = express();
 const allowedOrigins = [
   // "https://mentor-matching-platform-pi9d.vercel.app",
   // "https://mentor-matching-platform.vercel.app",
+  `${process.env.FRONTEND_URL}`,
   "http://localhost:5173",
 ];
 
